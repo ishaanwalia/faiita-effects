@@ -25,14 +25,14 @@ const events = [
     slug: "faiita-summit-2026",
     title: "FAIITA Summit 2026",
     description: "The annual flagship event bringing together IT leaders from all 25 states to discuss Digital India initiatives, policy advocacy, and industry trends. Join us for 3 days of networking, knowledge sharing, and strategic planning.",
-    fullContent: `The FAIITA Summit 2026 is our flagship annual event that brings together the leadership of all 25 state associations under one roof. This year's summit focuses on "Digital India: The Role of Channel Partners" and will feature keynote addresses from government officials, industry experts, and FAIITA office bearers.
+    fullContent: `The FAIITA Summit 2026 is our flagship annual event that brings together the leadership of all 25 state associations under one roof. This year's summit focuses on Digital India: The Role of Channel Partners and will feature keynote addresses from government officials, industry experts, and FAIITA office bearers.
 
 Key Highlights:
-• Policy discussions with Ministry of Electronics & IT representatives
-• GST simplification workshops for IT channel partners
-• Networking sessions with 200+ delegates
-• Exhibition showcasing latest IT products and solutions
-• Awards ceremony recognizing outstanding state associations
+- Policy discussions with Ministry of Electronics and IT representatives
+- GST simplification workshops for IT channel partners
+- Networking sessions with 200+ delegates
+- Exhibition showcasing latest IT products and solutions
+- Awards ceremony recognizing outstanding state associations
 
 The summit will be held at the India Habitat Centre, New Delhi, with accommodation arranged for outstation delegates. All FAIITA member associations are encouraged to send their leadership representatives.`,
     image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=600&fit=crop",
@@ -44,11 +44,11 @@ The summit will be held at the India Habitat Centre, New Delhi, with accommodati
     category: "Summit",
     attendees: "200+",
     agenda: [
-      { time: "Day 1 — 10:00 AM", title: "Inaugural Session & Keynote Address", speaker: "Chief Guest — Ministry of Electronics & IT" },
-      { time: "Day 1 — 2:00 PM", title: "Panel: Digital India & Channel Partners", speaker: "FAIITA President & Industry Leaders" },
-      { time: "Day 2 — 10:00 AM", title: "GST Simplification Workshop", speaker: "CA Expert Panel" },
-      { time: "Day 2 — 4:00 PM", title: "State Association Best Practices", speaker: "State Presidents" },
-      { time: "Day 3 — 10:00 AM", title: "Awards & Recognition Ceremony", speaker: "FAIITA Governing Body" },
+      { time: "Day 1 - 10:00 AM", title: "Inaugural Session and Keynote Address", speaker: "Chief Guest - Ministry of Electronics and IT" },
+      { time: "Day 1 - 2:00 PM", title: "Panel: Digital India and Channel Partners", speaker: "FAIITA President and Industry Leaders" },
+      { time: "Day 2 - 10:00 AM", title: "GST Simplification Workshop", speaker: "CA Expert Panel" },
+      { time: "Day 2 - 4:00 PM", title: "State Association Best Practices", speaker: "State Presidents" },
+      { time: "Day 3 - 10:00 AM", title: "Awards and Recognition Ceremony", speaker: "FAIITA Governing Body" },
     ],
   },
   {
@@ -58,11 +58,11 @@ The summit will be held at the India Habitat Centre, New Delhi, with accommodati
     fullContent: `This intensive two-day workshop is designed specifically for IT channel partners to understand and implement CERT-In cybersecurity guidelines. With increasing cyber threats targeting the IT supply chain, this workshop is essential for all members.
 
 Topics Covered:
-• CERT-In compliance requirements for IT dealers
-• Incident response and reporting protocols
-• Secure supply chain management
-• Data protection best practices
-• Ransomware prevention and mitigation
+- CERT-In compliance requirements for IT dealers
+- Incident response and reporting protocols
+- Secure supply chain management
+- Data protection best practices
+- Ransomware prevention and mitigation
 
 The workshop includes hands-on sessions, case studies, and a certification exam. Participants will receive a CERT-In compliance certificate upon completion.`,
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=600&fit=crop",
@@ -74,10 +74,10 @@ The workshop includes hands-on sessions, case studies, and a certification exam.
     category: "Workshop",
     attendees: "150",
     agenda: [
-      { time: "Day 1 — 9:30 AM", title: "CERT-In Guidelines Overview", speaker: "Cybersecurity Expert" },
-      { time: "Day 1 — 2:00 PM", title: "Hands-on: Incident Response", speaker: "Ethical Hacker Panel" },
-      { time: "Day 2 — 9:30 AM", title: "Supply Chain Security", speaker: "IT Security Consultant" },
-      { time: "Day 2 — 2:00 PM", title: "Certification Exam", speaker: "FAIITA Training Team" },
+      { time: "Day 1 - 9:30 AM", title: "CERT-In Guidelines Overview", speaker: "Cybersecurity Expert" },
+      { time: "Day 1 - 2:00 PM", title: "Hands-on: Incident Response", speaker: "Ethical Hacker Panel" },
+      { time: "Day 2 - 9:30 AM", title: "Supply Chain Security", speaker: "IT Security Consultant" },
+      { time: "Day 2 - 2:00 PM", title: "Certification Exam", speaker: "FAIITA Training Team" },
     ],
   },
   {
@@ -87,11 +87,11 @@ The workshop includes hands-on sessions, case studies, and a certification exam.
     fullContent: `Join us for an exclusive online webinar on government digital transformation opportunities. Learn about emerging tenders, procurement processes, and how your business can partner with government agencies.
 
 Webinar Highlights:
-• Overview of Digital India and Make in India initiatives
-• Government procurement portals and tender processes
-• How to register as a government vendor
-• Success stories from FAIITA member associations
-• Q&A session with government liaison officers
+- Overview of Digital India and Make in India initiatives
+- Government procurement portals and tender processes
+- How to register as a government vendor
+- Success stories from FAIITA member associations
+- Q&A session with government liaison officers
 
 This webinar is free for all FAIITA member association members. Registration is mandatory to receive the meeting link.`,
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=600&fit=crop",
@@ -104,7 +104,7 @@ This webinar is free for all FAIITA member association members. Registration is 
     agenda: [
       { time: "10:00 AM", title: "Digital India Overview", speaker: "Government Representative" },
       { time: "11:00 AM", title: "Procurement Process Guide", speaker: "FAIITA Secretary" },
-      { time: "12:00 PM", title: "Success Stories & Q&A", speaker: "Member Panel" },
+      { time: "12:00 PM", title: "Success Stories and Q&A", speaker: "Member Panel" },
     ],
   },
   {
@@ -128,7 +128,7 @@ Topics include e-invoicing, e-way bills, return filing, and input credit claims.
   },
   {
     slug: "regional-meet-south",
-    title: "FAIITA Regional Meet — South Zone",
+    title: "FAIITA Regional Meet - South Zone",
     description: "Regional gathering of South Indian state associations.",
     fullContent: `The South Zone Regional Meet brought together IT association leaders from Karnataka, Kerala, Tamil Nadu, Andhra Pradesh, and Telangana. Key discussions focused on regional logistics, shared procurement, and joint training initiatives.`,
     image: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1200&h=600&fit=crop",

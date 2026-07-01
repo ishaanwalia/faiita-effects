@@ -18,7 +18,6 @@ import {
   TrendingUp,
   Building2,
   MessageSquare,
-  Bell,
   Settings,
   ChevronRight,
 } from "lucide-react";
@@ -88,7 +87,7 @@ export default function AdminPage() {
 
   const recentActivity = [
     { action: "New contact form submitted", time: "2 hours ago", type: "contact" },
-    { action: "Event "FAIITA Summit 2026" updated", time: "5 hours ago", type: "event" },
+    { action: "Event FAIITA Summit 2026 updated", time: "5 hours ago", type: "event" },
     { action: "News article published", time: "1 day ago", type: "news" },
     { action: "State association data updated", time: "2 days ago", type: "state" },
   ];

@@ -26,20 +26,20 @@ const newsArticles = [
     excerpt: "The annual flagship event bringing together IT leaders from all 25 states to discuss Digital India initiatives.",
     content: `The FAIITA Summit 2026 is set to be the most impactful gathering of IT channel partners in India. Scheduled for August 15-17 at the India Habitat Centre in New Delhi, this year's summit will bring together over 200 delegates from 25 state associations.
 
-The summit's theme, "Digital India: The Role of Channel Partners," reflects the critical importance of IT dealers and distributors in India's digital transformation journey. With the government pushing for digital infrastructure across all sectors, channel partners are at the forefront of delivering technology solutions to businesses and consumers alike.
+The summit's theme, Digital India: The Role of Channel Partners, reflects the critical importance of IT dealers and distributors in India's digital transformation journey. With the government pushing for digital infrastructure across all sectors, channel partners are at the forefront of delivering technology solutions to businesses and consumers alike.
 
 Key sessions will include:
 
 Policy Advocacy Track
-Senior representatives from the Ministry of Electronics & Information Technology will join FAIITA office bearers for closed-door discussions on pending policy matters. Topics include GST simplification for IT trade, import duty rationalization, and support for domestic manufacturing under the Production Linked Incentive (PLI) scheme.
+Senior representatives from the Ministry of Electronics and Information Technology will join FAIITA office bearers for closed-door discussions on pending policy matters. Topics include GST simplification for IT trade, import duty rationalization, and support for domestic manufacturing under the Production Linked Incentive (PLI) scheme.
 
 Digital Transformation Workshop
 A hands-on workshop designed to help channel partners transition their businesses for the digital era. Sessions will cover e-commerce integration, cloud services adoption, cybersecurity compliance, and emerging technology trends including AI and IoT.
 
-Networking & Exhibition
+Networking and Exhibition
 The summit will feature an exhibition floor showcasing the latest products and solutions from leading IT brands. This provides an excellent opportunity for channel partners to explore new vendor relationships and product lines.
 
-Awards & Recognition
+Awards and Recognition
 The annual FAIITA Awards will recognize outstanding state associations, individual leaders, and innovative initiatives that have advanced the interests of India's IT channel partner community.
 
 Registration is now open for all FAIITA member associations. Each state association is encouraged to send a delegation of 3-5 members including their president and secretary.`,
@@ -91,22 +91,22 @@ The new measures will be implemented starting July 1, 2026. FAIITA will be organ
 Program Overview:
 
 The upskilling program will cover:
-• Cloud computing and SaaS solutions
-• Cybersecurity fundamentals
-• AI and machine learning basics for business
-• Digital marketing and e-commerce
-• Financial management and GST compliance
-• Customer relationship management
+- Cloud computing and SaaS solutions
+- Cybersecurity fundamentals
+- AI and machine learning basics for business
+- Digital marketing and e-commerce
+- Financial management and GST compliance
+- Customer relationship management
 
 Training Delivery:
 The program will be delivered through a hybrid model combining online modules, in-person workshops at state association offices, and hands-on lab sessions at partner training centers. Each participant will receive a certification upon completion.
 
 Target Beneficiaries:
 The program targets 10,000 IT channel partners over a 2-year period, with priority given to:
-• Young entrepreneurs (under 35 years)
-• Women-led IT businesses
-• Tier-2 and Tier-3 city dealers
-• Members of newly affiliated state associations
+- Young entrepreneurs (under 35 years)
+- Women-led IT businesses
+- Tier-2 and Tier-3 city dealers
+- Members of newly affiliated state associations
 
 Funding:
 The program is funded through a combination of NSDC grants, FAIITA member contributions, and corporate sponsorships from leading IT brands. Participants will pay a nominal registration fee of Rs. 500, with the remaining costs subsidized.
@@ -175,17 +175,17 @@ The sector now supports over 25 lakh direct and indirect jobs across India. FAII
 
 Challenges
 Despite the positive growth, the report identifies several challenges:
-• Working capital constraints for small dealers
-• Skill gaps in emerging technologies
-• Increasing competition from e-commerce platforms
-• Compliance burden from GST and cybersecurity regulations
+- Working capital constraints for small dealers
+- Skill gaps in emerging technologies
+- Increasing competition from e-commerce platforms
+- Compliance burden from GST and cybersecurity regulations
 
 FAIITA's Response
 FAIITA is working on several initiatives to address these challenges, including:
-• Negotiating better credit terms with vendors
-• Expanding the upskilling program
-• Advocating for e-commerce parity regulations
-• Simplifying compliance requirements
+- Negotiating better credit terms with vendors
+- Expanding the upskilling program
+- Advocating for e-commerce parity regulations
+- Simplifying compliance requirements
 
 The full report is available to FAIITA member associations upon request.`,
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=600&fit=crop",
@@ -196,7 +196,7 @@ The full report is available to FAIITA member associations upon request.`,
   },
   {
     slug: "pli-scheme-expansion",
-    title: "PLI Scheme Now Covers Laptops, Tablets & Servers",
+    title: "PLI Scheme Now Covers Laptops, Tablets and Servers",
     excerpt: "Production Linked Incentive scheme now covers laptops, tablets, and servers manufacturing in India.",
     content: `The government has expanded the Production Linked Incentive (PLI) scheme to include laptops, tablets, and servers manufacturing. This is a significant development for India's IT channel partner ecosystem.
 
@@ -205,28 +205,28 @@ Scheme Details:
 The expanded PLI scheme offers incentives of 1-4% on incremental sales over the base year. The total outlay for the IT hardware segment is Rs. 7,320 crore over 4 years.
 
 Eligible Products:
-• Laptops and notebooks
-• Tablets and hybrid devices
-• Servers and data center equipment
-• All-in-one PCs
-• Ultra-small form factor devices
+- Laptops and notebooks
+- Tablets and hybrid devices
+- Servers and data center equipment
+- All-in-one PCs
+- Ultra-small form factor devices
 
 Manufacturing Requirements:
 To qualify for incentives, manufacturers must:
-• Produce goods in India with 50%+ local value addition
-• Achieve minimum annual production targets
-• Maintain quality standards as per BIS specifications
-• Invest in local R&D and skill development
+- Produce goods in India with 50%+ local value addition
+- Achieve minimum annual production targets
+- Maintain quality standards as per BIS specifications
+- Invest in local R&D and skill development
 
 Impact on Channel Partners:
 This expansion is expected to:
-• Reduce import dependency for IT hardware
-• Lower prices for domestically manufactured products
-• Create new business opportunities for channel partners
-• Generate employment in manufacturing and logistics
+- Reduce import dependency for IT hardware
+- Lower prices for domestically manufactured products
+- Create new business opportunities for channel partners
+- Generate employment in manufacturing and logistics
 
 FAIITA's Role
-FAIITA has been advocating for this expansion since 2024. The federation submitted detailed representations to the Ministry of Electronics & IT, highlighting the potential for job creation and import substitution.
+FAIITA has been advocating for this expansion since 2024. The federation submitted detailed representations to the Ministry of Electronics and IT, highlighting the potential for job creation and import substitution.
 
 "This is a game-changer for India's IT ecosystem," said Rajeev Chitkara, Vice President of FAIITA. "Our channel partners will benefit from more competitive pricing on locally manufactured products, and the entire supply chain will see new opportunities."
 
