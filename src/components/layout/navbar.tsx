@@ -56,20 +56,16 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#1e3a5f] text-white shadow-lg">
+    <header className="sticky top-0 z-50 w-full bg-white text-[#0A2540] shadow-sm border-b">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2d8a4e] font-bold text-lg">
-              F
-            </div>
-            <div className="hidden sm:block">
-              <div className="text-lg font-bold leading-tight">FAIITA</div>
-              <div className="text-[10px] text-gray-300 leading-tight">
-                Federation of All India IT Associations
-              </div>
-            </div>
+            <img 
+              src="/FAIITA.jpg" 
+              alt="FAIITA" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -86,8 +82,8 @@ export function Navbar() {
                   className={cn(
                     "flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium transition-colors",
                     isActive(link.href)
-                      ? "bg-white/10 text-white"
-                      : "text-gray-200 hover:bg-white/10 hover:text-white"
+                      ? "text-[#FF9933]"
+                      : "text-[#0A2540] hover:text-[#FF9933]"
                   )}
                 >
                   {link.label}
@@ -101,9 +97,9 @@ export function Navbar() {
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1e3a5f]"
+                        className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0A2540]"
                       >
-                        <item.icon className="h-4 w-4 text-[#2d8a4e]" />
+                        <item.icon className="h-4 w-4 text-[#FF9933]" />
                         {item.label}
                       </Link>
                     ))}
@@ -115,17 +111,17 @@ export function Navbar() {
             {/* Login */}
             <Link
               href="/login"
-              className="ml-2 flex items-center gap-2 rounded-md bg-[#2d8a4e] px-4 py-2 text-sm font-medium text-white hover:bg-[#236b3d] transition-colors"
+              className="ml-2 flex items-center gap-2 rounded-md bg-[#0A2540] px-4 py-2 text-sm font-medium text-white hover:bg-[#0A2540]/90 transition-colors"
             >
               <LogIn className="h-4 w-4" />
-              Login
+              Member Login
             </Link>
           </nav>
 
           {/* Mobile Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-md hover:bg-white/10"
+            className="lg:hidden p-2 rounded-md hover:bg-gray-100"
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -134,7 +130,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-white/10 bg-[#1e3a5f]">
+        <div className="lg:hidden border-t bg-white">
           <div className="mx-auto max-w-7xl px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <div key={link.label}>
@@ -144,8 +140,8 @@ export function Navbar() {
                   className={cn(
                     "flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium",
                     isActive(link.href)
-                      ? "bg-white/10 text-white"
-                      : "text-gray-200 hover:bg-white/10"
+                      ? "text-[#FF9933]"
+                      : "text-[#0A2540] hover:bg-gray-50"
                   )}
                 >
                   {link.label}
@@ -158,9 +154,9 @@ export function Navbar() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setMobileOpen(false)}
-                        className="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-gray-300 hover:bg-white/10 hover:text-white"
+                        className="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-gray-600 hover:bg-gray-50 hover:text-[#0A2540]"
                       >
-                        <item.icon className="h-4 w-4 text-[#2d8a4e]" />
+                        <item.icon className="h-4 w-4 text-[#FF9933]" />
                         {item.label}
                       </Link>
                     ))}
@@ -171,7 +167,7 @@ export function Navbar() {
             <Link
               href="/login"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 mt-3 rounded-md bg-[#2d8a4e] px-3 py-2.5 text-sm font-medium text-white"
+              className="flex items-center gap-2 mt-3 rounded-md bg-[#0A2540] px-3 py-2.5 text-sm font-medium text-white"
             >
               <LogIn className="h-4 w-4" />
               Member Login

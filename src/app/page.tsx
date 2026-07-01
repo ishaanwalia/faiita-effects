@@ -94,10 +94,10 @@ export const dynamic = "force-static";
 
 export default function HomePage() {
   const stats = [
-    { icon: Users, value: "50,000+", label: "IT Dealers" },
-    { icon: MapPin, value: "25", label: "States" },
-    { icon: Building2, value: "25L+", label: "Employment" },
-    { icon: Globe, value: "500+", label: "Cities" },
+    { value: "50,000+", label: "DEALERS" },
+    { value: "25", label: "STATES" },
+    { value: "25,00,000+", label: "EMPLOYMENT" },
+    { value: "500+", label: "CITIES" },
   ];
 
   const benefits = [
@@ -163,38 +163,48 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-[#1e3a5f] py-16 text-white sm:py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
-        </div>
+      <section className="relative bg-[#0A2540] py-20 text-white sm:py-24 lg:py-32 overflow-hidden">
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Uniting India&apos;s IT Fraternity Since 1990
+          <div className="mx-auto max-w-4xl text-center">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-sm text-[#FF9933] mb-8">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#FF9933]" />
+              Uniting India's IT Fraternity Since 1990
+            </div>
+
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              Federation of All India
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
-              The Federation of All India Information Technology Associations — 
-              empowering 50,000+ IT channel partners across 25 states and 500+ cities.
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-[#FF9933] mt-2">
+              IT Associations
+            </h1>
+            
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/70">
+              Uniting 50,000+ IT entrepreneurs across 25 states — driving growth in Retail, Distribution, Services & Solutions
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
-                href="/about"
+                href="/state-associations"
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "w-full bg-[#2d8a4e] text-white hover:bg-[#236b3d] sm:w-auto"
+                  "w-full bg-[#FF9933] text-white hover:bg-[#e88a2e] sm:w-auto px-8 py-6 text-base font-medium"
                 )}
               >
-                Learn More
-                <ArrowRight className="ml-2 h-4 w-4" />
+                Find a Dealer
+                <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
               </Link>
               <Link
                 href="/contact"
                 className={cn(
-                  buttonVariants({ size: "lg", variant: "outline" }),
-                  "w-full border-white text-white hover:bg-white/10 sm:w-auto"
+                  buttonVariants({ size: "lg" }),
+                  "w-full bg-white text-[#0A2540] hover:bg-gray-100 sm:w-auto px-8 py-6 text-base font-medium"
                 )}
               >
-                Contact Us
+                Join FAIITA Today
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
           </div>
@@ -202,16 +212,13 @@ export default function HomePage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="border-b bg-white py-8">
+      <section className="bg-[#0A2540] border-t border-white/10 pb-16 pt-8">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="flex items-center justify-center gap-2 text-[#1e3a5f]">
-                  <stat.icon className="h-5 w-5" />
-                  <span className="text-2xl font-bold sm:text-3xl">{stat.value}</span>
-                </div>
-                <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
+                <div className="text-4xl font-bold text-white sm:text-5xl">{stat.value}</div>
+                <p className="mt-2 text-sm font-medium tracking-wider text-white/50">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -219,27 +226,27 @@ export default function HomePage() {
       </section>
 
       {/* Membership Benefits */}
-      <section className="py-14 sm:py-20 bg-gray-50">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold tracking-tight text-[#1e3a5f] sm:text-3xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-[#0A2540] sm:text-4xl">
               Membership Benefits
             </h2>
-            <p className="mt-3 max-w-2xl mx-auto text-muted-foreground">
+            <p className="mt-4 max-w-2xl mx-auto text-muted-foreground text-lg">
               State IT associations that join FAIITA gain access to a powerful national network and exclusive resources.
             </p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="bg-white rounded-lg p-6 shadow-sm border hover:shadow-md transition-shadow"
+                className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2d8a4e]/10 mb-4">
-                  <benefit.icon className="h-5 w-5 text-[#2d8a4e]" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0A2540] mb-6">
+                  <benefit.icon className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold text-[#1e3a5f]">{benefit.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="text-xl font-semibold text-[#0A2540]">{benefit.title}</h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -249,17 +256,17 @@ export default function HomePage() {
       </section>
 
       {/* FAIITA by the Numbers */}
-      <section className="py-14 sm:py-20 bg-[#1e3a5f] text-white">
+      <section className="py-16 sm:py-24 bg-[#0A2540] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               FAIITA by the Numbers
             </h2>
-            <p className="mt-3 text-white/70">
-              Our growing impact across India&apos;s IT ecosystem
+            <p className="mt-4 text-white/60 text-lg">
+              Our growing impact across India's IT ecosystem
             </p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { value: "25", label: "State Associations", sub: "Across India" },
               { value: "50K+", label: "Channel Partners", sub: "Indirect Members" },
@@ -267,9 +274,9 @@ export default function HomePage() {
               { value: "35+", label: "Years", sub: "Since 1990" },
             ].map((item) => (
               <div key={item.label} className="text-center">
-                <div className="text-4xl font-bold text-[#2d8a4e]">{item.value}</div>
-                <div className="mt-2 font-semibold">{item.label}</div>
-                <div className="text-sm text-white/60">{item.sub}</div>
+                <div className="text-5xl font-bold text-[#FF9933]">{item.value}</div>
+                <div className="mt-3 text-lg font-semibold">{item.label}</div>
+                <div className="text-sm text-white/50">{item.sub}</div>
               </div>
             ))}
           </div>
@@ -277,10 +284,10 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-14 sm:py-20 bg-white overflow-hidden">
+      <section className="py-16 sm:py-24 bg-gray-50 overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold tracking-tight text-[#1e3a5f] sm:text-3xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-[#0A2540] sm:text-4xl">
               What Our Leaders Say
             </h2>
           </div>
@@ -288,19 +295,19 @@ export default function HomePage() {
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="min-w-[320px] max-w-[400px] snap-start bg-gray-50 rounded-lg p-6 border"
+                className="min-w-[360px] max-w-[400px] snap-start bg-white rounded-xl p-8 shadow-sm"
               >
-                <p className="text-sm text-muted-foreground leading-relaxed italic">
+                <p className="text-muted-foreground leading-relaxed italic text-base">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="mt-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1e3a5f] text-white font-bold text-sm">
+                <div className="mt-6 flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0A2540] text-white font-bold text-lg">
                     {t.name.split(" ").map(n => n[0]).join("")}
                   </div>
                   <div>
-                    <div className="font-semibold text-sm text-[#1e3a5f]">{t.name}</div>
-                    <div className="text-xs text-muted-foreground">{t.role}</div>
-                    <div className="text-xs text-[#2d8a4e]">{t.company}</div>
+                    <div className="font-semibold text-[#0A2540]">{t.name}</div>
+                    <div className="text-sm text-muted-foreground">{t.role}</div>
+                    <div className="text-sm text-[#FF9933]">{t.company}</div>
                   </div>
                 </div>
               </div>
@@ -310,50 +317,50 @@ export default function HomePage() {
       </section>
 
       {/* Latest News */}
-      <section className="py-14 sm:py-20 bg-gray-50">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end mb-12">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight text-[#1e3a5f] sm:text-3xl">
+              <h2 className="text-3xl font-bold tracking-tight text-[#0A2540] sm:text-4xl">
                 Latest News
               </h2>
-              <p className="mt-2 text-muted-foreground">
-                Stay updated with the latest developments in India&apos;s IT trade.
+              <p className="mt-3 text-muted-foreground text-lg">
+                Stay updated with the latest developments in India's IT trade.
               </p>
             </div>
             <Link
               href="/news"
-              className="inline-flex items-center text-sm font-medium text-[#1e3a5f] hover:underline"
+              className="inline-flex items-center text-sm font-medium text-[#0A2540] hover:text-[#FF9933] transition-colors"
             >
               View all news
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {latestNews.map((article) => (
-              <Card key={article.id} className="flex h-full flex-col overflow-hidden">
-                <div className="aspect-video w-full bg-muted">
+              <Card key={article.id} className="flex h-full flex-col overflow-hidden border-0 shadow-lg">
+                <div className="aspect-video w-full bg-[#0A2540]/5">
                   {article.image ? (
                     <img src={article.image} alt={article.title} className="h-full w-full object-cover" />
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center bg-[#1e3a5f]/5">
-                      <Newspaper className="h-10 w-10 text-[#1e3a5f]/30" />
+                    <div className="flex h-full w-full items-center justify-center">
+                      <Newspaper className="h-12 w-12 text-[#0A2540]/20" />
                     </div>
                   )}
                 </div>
                 <CardHeader className="pb-2">
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Calendar className="h-3 w-3" />
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                    <Calendar className="h-3.5 w-3.5" />
                     {formatDate(article.publishedAt)}
                     {article.category && (
-                      <Badge variant="secondary" className="text-xs">
+                      <Badge variant="secondary" className="text-xs bg-[#FF9933]/10 text-[#FF9933] border-0">
                         {article.category}
                       </Badge>
                     )}
                   </div>
-                  <CardTitle className="line-clamp-2 text-base font-semibold">
-                    <Link href={`/news/${article.slug}`} className="hover:text-[#1e3a5f] hover:underline">
+                  <CardTitle className="line-clamp-2 text-lg font-semibold text-[#0A2540]">
+                    <Link href={`/news/${article.slug}`} className="hover:text-[#FF9933] transition-colors">
                       {article.title}
                     </Link>
                   </CardTitle>
@@ -370,40 +377,40 @@ export default function HomePage() {
       </section>
 
       {/* Upcoming Events */}
-      <section className="border-t bg-white py-14 sm:py-20">
+      <section className="border-t bg-gray-50 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end mb-12">
             <div>
-              <h2 className="text-2xl font-bold tracking-tight text-[#1e3a5f] sm:text-3xl">
+              <h2 className="text-3xl font-bold tracking-tight text-[#0A2540] sm:text-4xl">
                 Upcoming Events
               </h2>
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-3 text-muted-foreground text-lg">
                 Connect with the community at our upcoming events across India.
               </p>
             </div>
             <Link
               href="/events"
-              className="inline-flex items-center text-sm font-medium text-[#1e3a5f] hover:underline"
+              className="inline-flex items-center text-sm font-medium text-[#0A2540] hover:text-[#FF9933] transition-colors"
             >
               View all events
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight className="h-4 w-4 ml-1" />
             </Link>
           </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {upcomingEvents.map((event) => (
-              <Card key={event.id} className="h-full">
+              <Card key={event.id} className="h-full border-0 shadow-lg">
                 <CardHeader className="pb-2">
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <Calendar className="h-3 w-3" />
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                    <Calendar className="h-3.5 w-3.5" />
                     {formatDate(event.startDate)}
                     {event.endDate && ` - ${formatDate(event.endDate)}`}
                     {event.isOnline && (
-                      <Badge variant="secondary" className="text-xs">Online</Badge>
+                      <Badge variant="secondary" className="text-xs bg-[#0A2540]/10 text-[#0A2540] border-0">Online</Badge>
                     )}
                   </div>
-                  <CardTitle className="line-clamp-2 text-base font-semibold">
-                    <Link href={`/events/${event.slug}`} className="hover:text-[#1e3a5f] hover:underline">
+                  <CardTitle className="line-clamp-2 text-lg font-semibold text-[#0A2540]">
+                    <Link href={`/events/${event.slug}`} className="hover:text-[#FF9933] transition-colors">
                       {event.title}
                     </Link>
                   </CardTitle>
@@ -412,8 +419,8 @@ export default function HomePage() {
                   <p className="line-clamp-3 text-sm text-muted-foreground">
                     {event.description}
                   </p>
-                  <div className="flex items-center gap-1 text-sm text-[#1e3a5f]">
-                    <MapPin className="h-4 w-4" />
+                  <div className="flex items-center gap-1.5 text-sm text-[#0A2540] font-medium">
+                    <MapPin className="h-4 w-4 text-[#FF9933]" />
                     {event.isOnline ? "Online Event" : event.location}
                   </div>
                 </CardContent>
@@ -424,21 +431,21 @@ export default function HomePage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-[#2d8a4e] py-14 text-white sm:py-20">
+      <section className="bg-[#FF9933] py-16 text-white sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-              Ready to Connect with India&apos;s Largest IT Network?
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              Ready to Connect with India's Largest IT Network?
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-white/90 sm:text-lg">
+            <p className="mt-6 text-lg leading-relaxed text-white/90">
               State IT associations can reach out to FAIITA for membership and collaboration opportunities.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/contact"
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "w-full bg-white text-[#2d8a4e] hover:bg-white/90 sm:w-auto"
+                  "w-full bg-white text-[#FF9933] hover:bg-gray-100 sm:w-auto px-8 py-6 text-base font-medium"
                 )}
               >
                 Contact Us
@@ -447,7 +454,7 @@ export default function HomePage() {
                 href="/about"
                 className={cn(
                   buttonVariants({ size: "lg", variant: "outline" }),
-                  "w-full border-white text-white hover:bg-white/10 sm:w-auto"
+                  "w-full border-2 border-white text-white hover:bg-white/10 sm:w-auto px-8 py-6 text-base font-medium"
                 )}
               >
                 Learn More
