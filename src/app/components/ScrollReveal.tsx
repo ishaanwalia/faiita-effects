@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,40 +9,58 @@ gsap.registerPlugin(ScrollTrigger);
 interface ScrollRevealProps {
   children: React.ReactNode;
   className?: string;
-  from?: gsap.TweenVars;
-  to?: gsap.TweenVars;
+  direction?: "up" | "down" | "left" | "right" | "scale";
   delay?: number;
-  threshold?: number;
+  duration?: number;
+  distance?: number;
 }
 
 export function ScrollReveal({
   children,
   className = "",
-  from = { y: 40, opacity: 0 },
-  to = { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+  direction = "up",
   delay = 0,
-  threshold = 0.15,
+  duration = 0.8,
+  distance = 60,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!ref.current) return;
     const el = ref.current;
-    if (!el) return;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(el, from, {
-        ...to,
-        scrollTrigger: {
-          trigger: el,
-          start: `top bottom-=${(1 - threshold) * 100}%`,
-          toggleActions: "play none none reverse",
-        },
-        delay,
+    const initial = {
+      up: { y: distance, opacity: 0 },
+      down: { y: -distance, opacity: 0 },
+      left: { x: distance, opacity: 0 },
+      right: { x: -distance, opacity: 0 },
+      scale: { scale: 0.8, opacity: 0 },
+    };
+
+    gsap.set(el, initial[direction]);
+
+    const anim = gsap.to(el, {
+      y: direction === "up" || direction === "down" ? 0 : undefined,
+      x: direction === "left" || direction === "right" ? 0 : undefined,
+      scale: direction === "scale" ? 1 : undefined,
+      opacity: 1,
+      duration,
+      delay,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    return () => {
+      anim.kill();
+      ScrollTrigger.getAll().forEach((t) => {
+        if (t.trigger === el) t.kill();
       });
-    }, el);
-
-    return () => ctx.revert();
-  }, [from, to, delay, threshold]);
+    };
+  }, [direction, delay, duration, distance]);
 
   return (
     <div ref={ref} className={className}>
