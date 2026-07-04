@@ -90,3 +90,5 @@ export function CustomCursor() {
     </>
   );
 }
+
+export default StatsSection;
