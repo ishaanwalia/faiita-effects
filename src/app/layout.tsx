@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/app/components/Navbar";
 import { Footer } from "@/app/components/Footer";
 import { SmoothScroll } from "@/app/components/SmoothScroll";
-import { CustomCursor } from "@/app/components/CustomCursor";
+import CustomCursor from "@/app/components/CustomCursor";
 import { ScrollProgress } from "@/app/components/ScrollProgress";
 
 const inter = Inter({
