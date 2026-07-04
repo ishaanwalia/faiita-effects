@@ -1,60 +1,98 @@
+// src/app/components/CustomCursor.tsx
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import { useInView } from "framer-motion";
-import CountUp from "react-countup";
-import { GlassCard } from "@/app/components/GlassCard";
+import { useEffect, useState } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
-const stats = [
-  { value: 50000, suffix: "+", label: "Dealers" },
-  { value: 25, suffix: "", label: "States" },
-  { value: 28, suffix: "", label: "Associations" },
-  { value: 34, suffix: "", label: "Years of Unity" },
-  { value: 156, suffix: "+", label: "Events Hosted" },
-];
+export function CustomCursor() {
+  const [isHovering, setIsHovering] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-export function StatsSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [startCount, setStartCount] = useState(false);
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+
+  const springConfig = { damping: 25, stiffness: 400 };
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    if (isInView) setStartCount(true);
-  }, [isInView]);
+    const moveCursor = (e: MouseEvent) => {
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
+      if (!isVisible) setIsVisible(true);
+    };
+
+    const handleMouseEnter = () => setIsHovering(true);
+    const handleMouseLeave = () => setIsHovering(false);
+
+    window.addEventListener("mousemove", moveCursor);
+
+    const addListeners = () => {
+      const interactive = document.querySelectorAll(
+        "a, button, input, textarea, [data-cursor], [role='button']"
+      );
+      interactive.forEach((el) => {
+        el.addEventListener("mouseenter", handleMouseEnter);
+        el.addEventListener("mouseleave", handleMouseLeave);
+      });
+      return interactive;
+    };
+
+    let interactiveElements = addListeners();
+
+    const observer = new MutationObserver(() => {
+      interactiveElements.forEach((el) => {
+        el.removeEventListener("mouseenter", handleMouseEnter);
+        el.removeEventListener("mouseleave", handleMouseLeave);
+      });
+      interactiveElements = addListeners();
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+      interactiveElements.forEach((el) => {
+        el.removeEventListener("mouseenter", handleMouseEnter);
+        el.removeEventListener("mouseleave", handleMouseLeave);
+      });
+      observer.disconnect();
+    };
+  }, [cursorX, cursorY, isVisible]);
+
+  if (typeof window !== "undefined" && "ontouchstart" in window) return null;
 
   return (
-    <section ref={ref} className="relative py-24 overflow-hidden bg-[#0A0A0F]">
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
-          {stats.map((stat, index) => (
-            <GlassCard
-              key={stat.label}
-              className="text-center"
-              hover
-              glow
-              padding="lg"
-              asMotion={false}
-            >
-              <div className="text-3xl md:text-4xl font-bold text-[#00D4AA] mb-2 font-mono">
-                {startCount ? (
-                  <CountUp
-                    end={stat.value}
-                    duration={2.5}
-                    delay={index * 0.2}
-                    suffix={stat.suffix}
-                    separator=","
-                  />
-                ) : (
-                  <span>0</span>
-                )}
-              </div>
-              <div className="text-xs md:text-sm text-[#A0A0B0] uppercase tracking-wider">
-                {stat.label}
-              </div>
-            </GlassCard>
-          ))}
-        </div>
-      </div>
-    </section>
+    <>
+      <motion.div
+        className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference hidden md:block"
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+          translateX: "-50%",
+          translateY: "-50%",
+        }}
+      >
+        <motion.div
+          className="rounded-full bg-white"
+          animate={{
+            width: isHovering ? 48 : 12,
+            height: isHovering ? 48 : 12,
+            opacity: isVisible ? 1 : 0,
+          }}
+          transition={{ type: "spring", damping: 20, stiffness: 300 }}
+        />
+      </motion.div>
+      <style jsx global>{`
+        @media (hover: hover) {
+          body, a, button, [role="button"] {
+            cursor: none !important;
+          }
+        }
+      `}</style>
+    </>
   );
 }
+
+// Default export for backward compatibility
+export default CustomCursor;
