@@ -1,16 +1,18 @@
+// src/app/components/GlassCard.tsx
 "use client";
 
-import { ReactNode, ComponentPropsWithoutRef } from "react";
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-interface GlassCardProps extends ComponentPropsWithoutRef<"div"> {
+interface GlassCardProps {
   children: ReactNode;
   className?: string;
   hover?: boolean;
   glow?: boolean;
   padding?: "sm" | "md" | "lg" | "xl";
   asMotion?: boolean;
+  onClick?: () => void;
 }
 
 const paddingMap = {
@@ -28,7 +30,6 @@ export function GlassCard({
   padding = "md",
   asMotion = true,
   onClick,
-  ...props
 }: GlassCardProps) {
   const baseClasses = cn(
     "relative overflow-hidden rounded-2xl",
@@ -47,7 +48,6 @@ export function GlassCard({
         className={baseClasses}
         whileTap={onClick ? { scale: 0.98 } : undefined}
         onClick={onClick}
-        {...props}
       >
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         {children}
@@ -56,7 +56,7 @@ export function GlassCard({
   }
 
   return (
-    <div className={baseClasses} onClick={onClick} {...props}>
+    <div className={baseClasses} onClick={onClick}>
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       {children}
     </div>
